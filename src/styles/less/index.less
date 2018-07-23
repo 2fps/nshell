@@ -1,0 +1,45 @@
+@import '../../components/sliderBar/sliderBar.less';
+
+html, body {
+    font-size: 10px;
+    height: 100%;
+    font-family: 'monaco';
+}
+
+#root {
+    height: 100%;
+}
+
+// index.html 样式
+.box {
+    height: 100%;
+    position: relative;
+}
+.leftSlider {
+    height: 100%;
+    background-color: #ffffff;
+}
+.rightCon {
+    height: 100%;
+    position: relative;
+    & > .header {
+        background-color: #ffffff;
+        height: 4rem;
+        line-height: 4rem;
+        font-size: 1.6rem;
+    }
+    & > .content {
+        background-color: #ffffff;
+        position: absolute;
+        top: 4rem;
+        right: 0;
+        bottom: 4rem;
+        left: 0;
+    }
+    & > .footer {
+        background-color: #ffffff;
+        height: 4rem;
+        position: absolute;
+        bottom: 0;
+    }
+}
