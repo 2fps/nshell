@@ -1,3 +1,16 @@
+.jv-textarea {
+  width: 100%;
+  height: 8rem;
+  resize: none;
+}
+.tree-box {
+  position: absolute;
+  top: 12rem;
+  right: 4rem;
+  bottom: 0;
+  left: 4rem;
+  overflow: auto;
+}
 html,
 body {
   font-size: 10px;
@@ -17,6 +30,7 @@ body {
 }
 .rightCon {
   height: 100%;
+  background-color: #ffffff;
   position: relative;
 }
 .rightCon > .header {
@@ -27,15 +41,19 @@ body {
 }
 .rightCon > .content {
   background-color: #ffffff;
+  padding: 0 4rem;
   position: absolute;
   top: 4rem;
-  right: 0;
-  bottom: 4rem;
-  left: 0;
+  right: 4rem;
+  bottom: 3rem;
+  left: 4rem;
 }
 .rightCon > .footer {
   background-color: #ffffff;
-  height: 4rem;
+  padding: 0 4rem;
+  height: 3rem;
   position: absolute;
+  right: 0;
   bottom: 0;
+  left: 0;
 }

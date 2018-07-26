@@ -22,18 +22,25 @@ class SliderBar extends React.Component {
         }
     }
 
+    mapper = (value, index) => {
+        return (
+            <Menu.Item key={index}>
+                <Icon type="mail" />
+                <span>{value.name}</span>
+            </Menu.Item>
+        );
+    }
+
     render() {
         return (
         <Menu
         mode="inline"
         openKeys={this.state.openKeys}
         onOpenChange={this.onOpenChange}
+        onClick={this.props.clickSliderBar}
         style={{ width: 200}}
         >
-            <Menu.Item key="1">
-                <Icon type="mail" />
-                <span>JSON Viewer</span>
-            </Menu.Item>
+            {this.props.data.map(this.mapper)}
 {/*             <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}></SubMenu>
             <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>Navigation Two</span></span>}></SubMenu>
             <SubMenu key="sub4" title={<span><Icon type="setting" /><span>Navigation Three</span></span>}></SubMenu> */}

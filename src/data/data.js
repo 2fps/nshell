@@ -1,12 +1,12 @@
-let data = {
-    'JSON Viewer': {
-        title: 'JSON Viewer',
+let data = [
+    {
+        name: 'JSON Viewer'
 
     }
-};
+];
 
 let select = {
     name: ''
 };
 
-export default {data, select};
+export {data, select};
