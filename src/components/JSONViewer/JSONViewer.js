@@ -1,6 +1,6 @@
 import React from 'react';
 import {message, Button } from 'antd';
-import ObjectTree from '../objectTree/objectTree.js';
+import ObjectTree from '../JSONViewer/objectTree.js';
 
 class JSONViewer extends React.Component {
     constructor(props) {

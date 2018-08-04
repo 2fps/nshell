@@ -1,7 +1,8 @@
 let data = [
     {
         name: 'JSON Viewer'
-
+    }, {
+        name: 'PING'
     }
 ];
 

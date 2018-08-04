@@ -38,6 +38,7 @@ class SliderBar extends React.Component {
         openKeys={this.state.openKeys}
         onOpenChange={this.onOpenChange}
         onClick={this.props.clickSliderBar}
+        defaultSelectedKeys={['0']}
         style={{ width: 200}}
         >
             {this.props.data.map(this.mapper)}

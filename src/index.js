@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 // import './index.css';
 // import App from './App';
 // import registerServiceWorker from './registerServiceWorker';
-import 'antd/dist/antd.css';
-import './styles/css/index.css';
 import { Layout } from 'antd';
 import SliderBar from './components/sliderBar/sliderBar.js';
 import RelateArea from './components/relateArea/relateArea.js';
+import 'antd/dist/antd.css';
+import './styles/css/index.css';
 
 import { data } from './data/data.js';
 
@@ -30,9 +30,8 @@ ReactDOM.render(
     </Layout>, document.getElementById('root'));
 
 function clickSliderBar(info) {
-    // 选中了哪个
-    debugger;
     select = data[info.key];
+    debugger;
 }
 
 // registerServiceWorker();

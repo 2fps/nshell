@@ -1,0 +1,21 @@
+{
+  "name": "nutshell",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.js",
+  "homepage": "./",
+  "dependencies": {
+    "antd": "^3.7.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron-start": "electron .",
+	"packager": "electron-packager ./build HelloWorld --all --out ./OutApp --electron-version 2.0.5 --overwrite"
+  }
+}
