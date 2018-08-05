@@ -1,9 +1,13 @@
 import React from 'react';
 import { Menu, Icon } from 'antd';
+import { BrowserRouter, Router, Route, Link } from 'react-router-dom';
 
 const SubMenu = Menu.SubMenu;
 
 class SliderBar extends React.Component {
+    constructor(props){
+        super(props);
+    }
     // submenu keys of first level
     rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
 
@@ -22,11 +26,17 @@ class SliderBar extends React.Component {
         }
     }
 
+    toLink = (link) => {
+        if (link) {
+            this.props.history.push(link);
+        }
+    }
+
     mapper = (value, index) => {
         return (
             <Menu.Item key={index}>
                 <Icon type="mail" />
-                <span>{value.name}</span>
+                <Link style={{display: 'inline-block'}} to={value.path}>{value.name}</Link>
             </Menu.Item>
         );
     }

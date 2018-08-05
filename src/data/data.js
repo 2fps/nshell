@@ -1,8 +1,10 @@
 let data = [
     {
-        name: 'JSON Viewer'
+        name: 'JSON Viewer',
+        path: '/JSON Viewer'
     }, {
-        name: 'PING'
+        name: 'PING',
+        path: '/PING'
     }
 ];
 

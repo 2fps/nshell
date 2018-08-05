@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
-// import App from './App';
-// import registerServiceWorker from './registerServiceWorker';
+import { BrowserRouter } from 'react-router-dom';
 import { Layout } from 'antd';
 import SliderBar from './components/sliderBar/sliderBar.js';
 import RelateArea from './components/relateArea/relateArea.js';
@@ -15,23 +13,40 @@ const { Header, Footer, Sider, Content } = Layout;
 
 let select = data[0];
 
-ReactDOM.render(
-    <Layout className="box">
-        <Sider className="leftSlider">
-            <SliderBar data={data} clickSliderBar={clickSliderBar}></SliderBar>
-        </Sider>
-        <Layout className="rightCon">
-            <Header className="header">Header</Header>
-            <Content className="content">
-                <RelateArea now={select}></RelateArea>
-            </Content>
-            <Footer className="footer">Footer</Footer>
-        </Layout>
-    </Layout>, document.getElementById('root'));
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            nowDirName : 'JSON Viewer'
+        };
+    }
+    clickSliderBar = (info) => {
+        this.setState({
+            nowDirName: data[info.key].name
+        });
+    }
+    render() {
+        return (
+            <BrowserRouter
+            basename="/"
+            forceRefresh={false}
+            keyLength={12}
+            >
+                <Layout className="box">
+                    <Sider className="leftSlider">
+                        <SliderBar data={data} clickSliderBar={this.clickSliderBar}></SliderBar>
+                    </Sider>
+                    <Layout className="rightCon">
+                        <Header className="header">{this.state.nowDirName}</Header>
+                        <Content className="content">
+                            <RelateArea now={select}></RelateArea>
+                        </Content>
+                        <Footer className="footer">Footer</Footer>
+                    </Layout>
+                </Layout>
+            </BrowserRouter>
+        );
+    }
+};
 
-function clickSliderBar(info) {
-    select = data[info.key];
-    debugger;
-}
-
-// registerServiceWorker();
+ReactDOM.render(<App />, document.getElementById('root'));
