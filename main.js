@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const {app, Menu, BrowserWindow} = require('electron')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -7,7 +7,7 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 1000, height: 600})
+  mainWindow = new BrowserWindow({width: 1000, height: 600, frame: false})
 
   // 显示控制台
   mainWindow.webContents.openDevTools()
@@ -51,3 +51,18 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+var template = [
+  {
+    label: '关闭',
+    click: function () { win.close();console.log("关闭")},
+    // submenu: [
+    //   {
+    //     label: 'Undo',
+    //     accelerator: 'CmdOrCtrl+Z',
+    //     role: 'undo'
+    //   }
+    // ]
+  }]
+var menu = Menu.buildFromTemplate(template)
+Menu.setApplicationMenu(menu);

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Layout } from 'antd';
 import SliderBar from './components/sliderBar/sliderBar.js';
 import RelateArea from './components/relateArea/relateArea.js';
@@ -27,7 +27,7 @@ class App extends React.Component {
     }
     render() {
         return (
-            <BrowserRouter
+            <HashRouter
             basename="/"
             forceRefresh={false}
             keyLength={12}
@@ -44,7 +44,7 @@ class App extends React.Component {
                         <Footer className="footer">Footer</Footer>
                     </Layout>
                 </Layout>
-            </BrowserRouter>
+            </HashRouter>
         );
     }
 };
