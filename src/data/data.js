@@ -5,6 +5,9 @@ let data = [
     }, {
         name: 'PING',
         path: '/PING'
+    }, {
+        name: 'HTTP',
+        path: 'HTTP'
     }
 ];
 
