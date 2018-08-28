@@ -1,5 +1,6 @@
 // Modules to control application life and create native browser window
-const {app, Menu, BrowserWindow} = require('electron')
+const {app, Menu, BrowserWindow, ipcMain} = require('electron')
+const path = require("path")
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -7,13 +8,26 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 1000, height: 600, frame: false})
+  mainWindow = new BrowserWindow({
+    width: 1000,
+    height: 600,
+    frame: false,
+    transparent: true,
+    webPreferences: {
+      javascript: true,
+      plugins: true,
+      nodeIntegration: false, // 不集成 Nodejs
+      webSecurity: false,
+      preload: path.join(__dirname, './public/renderer.js') // 但预加载的 js 文件内仍可以使用 Nodejs 的 API
+    }
+  })
 
   // 显示控制台
   mainWindow.webContents.openDevTools()
 
   // and load the index.html of the app.
   mainWindow.loadURL('http://localhost:3000/')
+  // mainWindow.loadURL(path.join('file://', __dirname, '/public/index.html'))
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
@@ -66,3 +80,7 @@ var template = [
   }]
 var menu = Menu.buildFromTemplate(template)
 Menu.setApplicationMenu(menu);
+
+ipcMain.on('somemsg', (evt, data) => {
+  console.log(data)
+});

@@ -10,6 +10,10 @@
             height: 60px;
         }
     </style>
+    <script>
+        // You can also require other files to run in this process
+        require('./renderer.js')
+    </script>
     <body>
         <textarea class="jsonview" id="jsonview" placeholder="put hear"></textarea>
         <button id="trans">转化</button>
@@ -21,9 +25,6 @@
         <script type="text/javascript">
 
         </script>
-        <script>
-        // You can also require other files to run in this process
-        require('./renderer.js')
-        </script>
+
     </body>
 </html>

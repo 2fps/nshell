@@ -6,6 +6,7 @@ import SliderBar from './components/sliderBar/sliderBar.js';
 import RelateArea from './components/relateArea/relateArea.js';
 import 'antd/dist/antd.css';
 import './styles/css/index.css';
+import './public/js/drag.js';
 
 import { data } from './data/data.js';
 
